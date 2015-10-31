@@ -1,25 +1,50 @@
-<ion-modal-view>
-  <ion-header-bar>
-    <h1 class="title">Login</h1>
-    <div class="buttons">
-      <button class="button button-clear" ng-click="closeLogin()">Close</button>
-    </div>
-  </ion-header-bar>
+<ion-view view-title="Login" class="login">
   <ion-content>
-    <form ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="loginData.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Log in</button>
-        </label>
+    <div class="login-content">
+      <form name="loginForm" class="loginForm">
+        <md-input-container flex>
+          <label>Email</label>
+          <input type="email" name="userEmail" ng-model="userEmail" ng-pattern="/^.+@.+\..+$/" required>
+        </md-input-container>
+        <md-input-container flex>
+          <label>Senha</label>
+          <input type="password" name="userSenha" ng-model="userSenha" required>
+        </md-input-container>
+      </form>
+      <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+        <a ui-sref={{destino}} class="button button-balanced login_btn">Entrar</a>
+        <br/>
+        <div class="label">
+          <a onclick="alert('Sorry, not yet implemented');" flex>Esqueci a minha senha</a>
+          <em>    |    </em>
+          <a onclick="alert('Sorry, not yet implemented');" flex>Novo Usuário</a>
+        </div>
+      </section>
+
+<!-- Botão de login em redes sociais-->
+      <div class="lock-size" layout="row" layout-align="center center" layout-sm="column" layout-wrap>
+        <md-fab-speed-dial md-open="false" md-direction="left"
+                         ng-class="md-fling">
+          <md-fab-trigger>
+            <md-button aria-label="menu" class="md-fab md-warn">
+              <i class="icon ion-navicon"></i>
+              <md-tooltip>Entrar com</md-tooltip>
+            </md-button>
+          </md-fab-trigger>
+          <md-fab-actions>
+            <md-button aria-label="Twitter" class="md-fab md-raised md-mini" onclick="location.href='https://instagram.com/oauth/authorize/?client_id=f952f289691e4a758c5ae979c7fcf076&redirect_uri=http://192.168.0.10:8101/#/main&response_type=token'">
+              <i class="icon ion-social-twitter"></i>
+            </md-button>
+            <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+              <i class="icon ion-social-facebook"></i>
+            </md-button>
+            <md-button aria-label="Instagram" class="md-fab md-raised md-mini">
+              <i class="icon ion-social-instagram"></i>
+            </md-button>
+          </md-fab-actions>
+        </md-fab-speed-dial>
       </div>
-    </form>
+
+    </div>
   </ion-content>
-</ion-modal-view>
+</ion-view>

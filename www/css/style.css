@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+@import "_login.css";
+@import "_main.css";
+
+.menudemoMenuWidth .md-menu-demo {
+  padding: 24px; }
+.menudemoMenuWidth .menu-demo-container {
+  min-height: 200px; }

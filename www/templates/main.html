@@ -4,31 +4,31 @@
         <h1 class="title">Concert App</h1>
         <!--a class="button icon-left ion-android-more-vertical button-clear"></a-->
          <md-menu>
-         <a class="button icon-right ion-android-more-vertical button-clear" ng-click="$mdOpenMenu($event)"></a>
-        
-          <!--md-button aria-label="Open demo menu icon-left" class="md-icon-button" ng-click="$mdOpenMenu($event)">
-            <md-icon md-menu-origin md-svg-icon="call:business"></md-icon>
-          </md-button-->
-          <md-menu-content width="6">
-            <md-menu-item>
-              <md-button ng-click="ctrl.announceClick($index)">
-                <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
-                About
-              </md-button>
-            </md-menu-item>
-            <md-menu-item>
-              <md-button ng-click="ctrl.announceClick($index)">
-                <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
-                Settings
-              </md-button>
-            </md-menu-item>
-            <md-menu-item>
-              <md-button ng-click="ctrl.announceClick()">
-                <md-icon md-menu-align-target md-svg-icon="call:no-sim"></md-icon>
-                Logout
-              </md-button>
-            </md-menu-item>
-          </md-menu-content>
+           <a class="button icon-right ion-android-more-vertical button-clear" ng-click="$mdOpenMenu($event)"></a>
+          
+            <!--md-button aria-label="Open demo menu icon-left" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+              <md-icon md-menu-origin md-svg-icon="call:business"></md-icon>
+            </md-button-->
+            <md-menu-content width="6">
+              <md-menu-item>
+                <md-button ng-click="announceClick(0)"> <!--ng-click="announceClick($index)"-->
+                  <i md-menu-align-target class="icon ion-information-circled"></i>
+                  About
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="announceClick(1)">
+                  <i md-menu-align-target class="icon ion-settings"></i>
+                  Settings
+                </md-button>
+              </md-menu-item>
+              <md-menu-item>
+                <md-button ng-click="announceClick(2)">
+                  <i md-menu-align-target class="icon ion-close-circled"></i>
+                  Logout
+                </md-button>
+              </md-menu-item>
+            </md-menu-content>
         </md-menu>
       </ion-nav-title>
     </ion-nav-bar>
@@ -72,7 +72,7 @@
             </a>
             <a class="tab-item" href="#" ng-click="insta($index)">
               <i class="icon ion-share"></i>
-              Share
+              Share on Instagram
             </a>
           </div>
 

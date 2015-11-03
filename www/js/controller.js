@@ -12,7 +12,7 @@ angular.module('starter.controllers', [])
 	}
 }])
 
-.controller('MainCtrl', function ($scope, $http) {
+.controller('MainCtrl', function ($scope, $http, $mdDialog) {
 	$http.get('data.json').success(function(data){
 		$scope.pics = data;
 	});
@@ -34,9 +34,9 @@ angular.module('starter.controllers', [])
 				})
 				.success(function(message, token){
 					dados = message;
-					JSON.stringify(dados);
 					console.log(message);
-					alert('Extracted: '+message);
+					console.log(JSON.stringify(dados));
+					alert('Extracted: '+message.jobID);
 				})
 				.error(function(message){
 					console.log(message);
@@ -46,16 +46,25 @@ angular.module('starter.controllers', [])
 	}
 
 	var originatorEv;
-    this.openMenu = function($mdOpenMenu, ev) {
+    $scope.openMenu = function($mdOpenMenu, ev) {
       originatorEv = ev;
       $mdOpenMenu(ev);
     };
-    this.announceClick = function(index) {
+    $scope.announceClick = function(index) {
+    	var title = 'About', content = 'Concert App for Hackathon Challenge Episode 2';
+    	if(index == 1){
+    		title = 'Settings'; 
+    		content = 'Here you define your Settings';
+    	};
+    	if(index==2){
+    		title = 'Logout';
+    		content = 'Loging Out';
+    	};
       $mdDialog.show(
         $mdDialog.alert()
-          .title('You clicked!')
-          .content('You clicked the menu item at index ' + index)
-          .ok('Nice')
+          .title(title)
+          .content(content)
+          .ok('Done')
           .targetEvent(originatorEv)
       );
       originatorEv = null;

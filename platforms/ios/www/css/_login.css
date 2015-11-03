@@ -1,0 +1,48 @@
+.login-content{
+  /*width: 100%;*/
+  margin: 100px 20px 20px 20px;
+}
+
+.loginForm{
+  border-radius: 5px;
+  padding: 10px;
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+}
+
+.login_btn{
+	width: 96%;
+}
+
+.login a{
+  color: white;
+  text-decoration: none;
+}
+
+.login ion-content{
+  background: url("../img/minions.jpg") center; 
+  background-size: cover;
+}
+
+.login a:active {color:#ff660b;}
+.login a:hover{
+  cursor: pointer;
+}
+
+.login i{
+  font-size: 1.8em;
+}
+.lock-size .md-fab:hover, .lock-size .md-fab.md-focused {
+  background-color: #000 !important; }
+.lock-size {
+  
+  /*margin: 3em 2em 5em 20em;
+  min-width: 300px;
+  min-height: 300px;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto; */
+}

@@ -34,7 +34,6 @@ angular.module('starter.controllers', [])
 				})
 				.success(function(message, token){
 					dados = message;
-					console.log(message);
 					console.log(JSON.stringify(dados));
 					alert('Extracted: '+message.jobID);
 				})

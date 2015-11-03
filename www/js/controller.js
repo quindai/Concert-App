@@ -27,21 +27,30 @@ angular.module('starter.controllers', [])
 	var hp_apikey = 'a463c36d-3f23-4da7-9cd5-83d28ceb34ba';
 	var dados;
 	$scope.readImage = function(index){
-		$http.post("https://api.idolondemand.com/1/api/async/ocrdocument/v1",
+		$http.post("https://api.idolondemand.com/1/api/sync/ocrdocument/v1",
 				{
 					'apikey': hp_apikey,
-					'file': $scope.pics[index].pic
+					'file': $scope.pics[index].pic,
+					'mode': 'document_photo'
 				})
 				.success(function(message, token){
 					dados = message;
+					console.log(message);
 					console.log(JSON.stringify(dados));
-					alert('Extracted: '+message.jobID);
+					$mdDialog.show(
+			        $mdDialog.alert()
+			          .title('Success')
+			          .content('Text in Image: '+JSON.stringify(dados))
+			          .ok('Done')
+			          .targetEvent(originatorEv)
+			      );
+					//Only async window.localStorage.setItem("jobID", message.jobID);
 				})
 				.error(function(message){
 					console.log(message);
 					//alert(message);
 				})
-				alert("Preparing to extract text from picture");
+				//Load something alert("Preparing to extract text from picture");
 	}
 
 	var originatorEv;

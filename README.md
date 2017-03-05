@@ -1,5 +1,5 @@
 # Concert-App
-Hackthon App on Hackthon Challenge - Episode 2
+Hackathon App on Hackathon Challenge - Episode 2
 
 Hybrid app based on Ionic/Cordova.
 
